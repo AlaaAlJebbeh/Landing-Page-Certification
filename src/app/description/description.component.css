@@ -1,0 +1,80 @@
+.container {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the start of the container */
+    gap: 20px; /* Space between the two divs */
+  }
+  
+  .description {
+    width: 500px;
+    padding-left: 40px;
+    padding-top: 20px;
+  }
+  
+  h2 {
+    font-family: "Georgia", "Times New Roman", Times, serif; /* Formal serif font */
+    font-size: 2em; /* Adjust the size as needed */
+    font-weight: normal; /* You can also use bold if desired */
+    color: #67329e; /* Formal purple color */
+    line-height: 1.2; /* Adjust the line height for readability */
+    margin-bottom: 20px; /* Space below the subheading */
+    letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+  }
+  
+  .tick-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .tick-list li {
+    position: relative; /* Position relative to place the tick icon */
+    padding-left: 40px; /* Space for the tick icon */
+    margin-bottom: 10px; /* Space between items */
+    font-family: "Arial", sans-serif; /* Font style (optional) */
+    font-size: 1.2em; /* Font size (optional) */
+  }
+  
+  .tick-list li::before {
+    content: ""; /* No content needed for background image */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the icon */
+    width: 30px; /* Width of the tick icon */
+    height: 30px; /* Height of the tick icon */
+    background: url("/public/check-mark.png") no-repeat center center; /* Path to your tick icon */
+    background-size: contain; /* Scale the icon to fit the area */
+  }
+  
+  .calendly-inline-widget {
+    flex: 1; /* Allow the widget to take up remaining space */
+    min-width: 320px;
+    height: 700px;
+  }
+
+  .video-thumbnail {
+    position: relative;
+    width: 400px; /* Adjust width as needed */
+    height: 200px; /* Maintain 16:9 aspect ratio (300 / 16 * 9 = 169) */
+    background-color: #000; /* Background color for the thumbnail */
+    margin-bottom: 20px; /* Space between video and description */
+    margin: 35px;
+    margin-left: 35px;
+  }
+  
+  .video-thumbnail img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Cover the container without distortion */
+  }
+  
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px; /* Smaller play button */
+    height: 40px; /* Smaller play button */
+    background: url('/public/play-button.png') no-repeat center center;
+    background-size: contain; /* Adjust based on the icon */
+  }
