@@ -19,20 +19,25 @@
   height: 150px;
 }
 
-.title_container {
-  text-align: center; /* Center the title horizontally (optional) */
-  margin: 0; /* Remove margin to avoid extra space */
-  height: fit-content;
-
+@media (max-width: 576px) {
+  .logo {
+    max-width: 200px; /* Adjust logo size for smaller screens */
+  }
 }
 
-.title {
-  font-family: "Times New Roman", Times, serif; /* Formal serif font */
-  font-size: 3.5em; /* Adjust the size as needed */
-  font-weight: normal; /* You can also use bold if desired */
-  color: #333; /* Dark gray color for a formal look */
-  line-height: 1.2; /* Adjust the line height for readability */
-  margin: 0; /* Remove margin to avoid extra space */
-  padding: 10px 0; /* Optional: Add padding for spacing within the container */
-  letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+/* Tablets and small desktops */
+@media (min-width: 577px) and (max-width: 992px) {
+  .logo {
+    max-width: 225px; /* Adjust logo size for medium screens */
+  }
 }
+
+/* Large desktops */
+@media (min-width: 993px) {
+  .header__container {
+    height: 130px; /* Ensure the header has a consistent height on larger screens */
+  }
+}
+
+
+

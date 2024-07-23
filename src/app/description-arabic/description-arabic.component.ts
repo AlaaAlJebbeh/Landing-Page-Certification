@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-description',
+  selector: 'app-description-arabic',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './description.component.html',
-  styleUrl: './description.component.css'
+  templateUrl: './description-arabic.component.html',
+  styleUrl: './description-arabic.component.css'
 })
-export class DescriptionComponent {
-
+export class DescriptionArabicComponent {
   ngAfterViewInit() {
     this.loadCalendlyScript();
   }

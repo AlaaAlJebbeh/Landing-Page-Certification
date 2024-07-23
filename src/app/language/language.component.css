@@ -1,0 +1,29 @@
+.language-switcher {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .language-switcher label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .language-switcher select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .language-switcher select:focus {
+    outline: none;
+    border-color: #67329E;
+    box-shadow: 0 0 5px rgba(103, 50, 158, 0.5);
+  }

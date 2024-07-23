@@ -1,13 +1,20 @@
+/* General Container Styles */
 .container {
     display: flex; /* Use flexbox for layout */
     align-items: flex-start; /* Align items to the start of the container */
     gap: 20px; /* Space between the two divs */
   }
   
+  /* RTL Layout Adjustments */
+  .container.rtl {
+    flex-direction: row-reverse; /* Flip the layout for RTL */
+  }
+  
   .description {
     width: 500px;
-    padding-left: 40px;
+    padding-right: 40px; /* Adjust padding for RTL */
     padding-top: 20px;
+    direction: rtl;
   }
   
   h2 {
@@ -18,6 +25,7 @@
     line-height: 1.2; /* Adjust the line height for readability */
     margin-bottom: 20px; /* Space below the subheading */
     letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+    direction: rtl;
   }
   
   .tick-list {
@@ -28,31 +36,32 @@
   
   .tick-list li {
     position: relative; /* Position relative to place the tick icon */
-    padding-left: 40px; /* Space for the tick icon */
+    padding-right: 40px; /* Space for the tick icon on RTL */
     margin-bottom: 10px; /* Space between items */
     font-family: "Arial", sans-serif; /* Font style (optional) */
     font-size: 1.2em; /* Font size (optional) */
+    direction: rtl;
   }
   
   .tick-list li::before {
     content: ""; /* No content needed for background image */
     position: absolute;
-    left: 0;
+    right: 0; /* Move the icon to the right for RTL */
     top: 50%;
     transform: translateY(-50%); /* Vertically center the icon */
     width: 30px; /* Width of the tick icon */
     height: 30px; /* Height of the tick icon */
     background: url("/public/check-mark.png") no-repeat center center; /* Path to your tick icon */
     background-size: contain; /* Scale the icon to fit the area */
+    direction: rtl;
   }
   
   .calendly-inline-widget {
     flex: 1; /* Allow the widget to take up remaining space */
     min-width: 320px;
     height: 700px;
-    overflow: hidden;
   }
-
+  
   .video-thumbnail {
     position: relative;
     width: 400px; /* Adjust width as needed */
@@ -60,7 +69,7 @@
     background-color: #000; /* Background color for the thumbnail */
     margin-bottom: 20px; /* Space between video and description */
     margin: 35px;
-    margin-left: 35px;
+    margin-right: 35px; /* Adjust margin for RTL */
   }
   
   .video-thumbnail img {
@@ -96,7 +105,9 @@
     margin: 0; /* Remove margin to avoid extra space */
     padding: 10px 0; /* Optional: Add padding for spacing within the container */
     letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+    direction: rtl;
   }
+  
 
   @media (max-width: 899px) {
     .description {
@@ -107,9 +118,9 @@
     .video-thumbnail {
       width: 100%; /* Full width on small screens */
       height: auto; /* Adjust height to maintain aspect ratio */
-      margin-left: 0; /* Remove left margin */
+      margin-right: 0; /* Remove left margin */
       padding: 0;
-      margin-right: 20px;
+      margin-left: 20px;
     }
   
     .tick-list li {
@@ -118,7 +129,7 @@
     }
 
     .tick-list li::before{
-      margin-right: 25px;
+      margin-left: 25px;
     }
   
     .title {
@@ -136,4 +147,3 @@
       gap: 20px; /* Space between the stacked items */
     }
   }
-  
