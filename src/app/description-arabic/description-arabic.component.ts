@@ -11,6 +11,12 @@ import { RouterLink } from '@angular/router';
 export class DescriptionArabicComponent {
   ngAfterViewInit() {
     this.loadCalendlyScript();
+    this.adjustIframeHeight();
+    window.addEventListener('resize', this.adjustIframeHeight);
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.adjustIframeHeight);
   }
 
   private loadCalendlyScript() {
@@ -21,4 +27,12 @@ export class DescriptionArabicComponent {
     document.body.appendChild(script);
   }
 
+  private adjustIframeHeight = () => {
+    const container = document.getElementById('calendly-container');
+    const newHeight = window.innerHeight + 200;
+    if (container) {
+      container.style.height = `${newHeight}px`;
+      container.style.marginBottom = `-250px`;
+  }
+  }
 }

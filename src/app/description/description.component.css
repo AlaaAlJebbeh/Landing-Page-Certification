@@ -1,139 +1,171 @@
 .container {
-    display: flex; /* Use flexbox for layout */
-    align-items: flex-start; /* Align items to the start of the container */
-    gap: 20px; /* Space between the two divs */
-  }
-  
+  display: flex; /* Use flexbox for layout */
+  align-items: flex-start; /* Align items to the start of the container */
+  gap: 20px; /* Space between the two divs */
+}
+
+.description {
+  width: 500px;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+h2 {
+  font-family: "Georgia", "Times New Roman", Times, serif; /* Formal serif font */
+  font-size: 2em; /* Adjust the size as needed */
+  font-weight: normal; /* You can also use bold if desired */
+  color: #67329e; /* Formal purple color */
+  line-height: 1.2; /* Adjust the line height for readability */
+  margin-bottom: 20px; /* Space below the subheading */
+  letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+}
+
+.tick-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.tick-list li {
+  position: relative; /* Position relative to place the tick icon */
+  padding-left: 40px; /* Space for the tick icon */
+  margin-bottom: 10px; /* Space between items */
+  font-family: "Arial", sans-serif; /* Font style (optional) */
+  font-size: 1.2em; /* Font size (optional) */
+}
+
+.tick-list li::before {
+  content: ""; /* No content needed for background image */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the icon */
+  width: 30px; /* Width of the tick icon */
+  height: 30px; /* Height of the tick icon */
+  background: url("/public/check-mark.png") no-repeat center center; /* Path to your tick icon */
+  background-size: contain; /* Scale the icon to fit the area */
+}
+
+#calendly-container {
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Hide overflow to avoid scroll bars */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for responsiveness */
+  justify-content: center;
+  align-items: center;
+}
+
+.calendly-inline-widget {
+  width: 100%;
+  height: 100%; /* Take full height of the container */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-height: auto !important;
+}
+
+/* Override classes affecting height and width */
+.oNS9ciVl9HkYl_RNpI17.qW_zL2XDBBdtqDDZUDDc {
+  min-height: auto !important;
+  height: 100% !important; /* Ensure it takes full height of the container */
+}
+
+._3YPRbLVNkBcc0bgx_45 {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+
+
+.video-thumbnail {
+  position: relative;
+  width: 400px; /* Adjust width as needed */
+  height: 200px; /* Maintain 16:9 aspect ratio (300 / 16 * 9 = 169) */
+  background-color: #000; /* Background color for the thumbnail */
+  margin-bottom: 20px; /* Space between video and description */
+  margin: 35px;
+  margin-left: 35px;
+}
+
+.video-thumbnail img {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* Cover the container without distortion */
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px; /* Smaller play button */
+  height: 40px; /* Smaller play button */
+  background: url("/public/play-button.png") no-repeat center center;
+  background-size: contain; /* Adjust based on the icon */
+}
+
+.title_container {
+  text-align: center; /* Center the title horizontally (optional) */
+  margin: 0; /* Remove margin to avoid extra space */
+  height: fit-content;
+}
+
+.title {
+  font-family: "Times New Roman", Times, serif; /* Formal serif font */
+  font-size: 3.5em; /* Adjust the size as needed */
+  font-weight: normal; /* You can also use bold if desired */
+  color: #333; /* Dark gray color for a formal look */
+  line-height: 1.2; /* Adjust the line height for readability */
+  margin: 0; /* Remove margin to avoid extra space */
+  padding: 10px 0; /* Optional: Add padding for spacing within the container */
+  letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+}
+
+@media (max-width: 899px) {
   .description {
-    width: 500px;
-    padding-left: 40px;
-    padding-top: 20px;
-  }
-  
-  h2 {
-    font-family: "Georgia", "Times New Roman", Times, serif; /* Formal serif font */
-    font-size: 2em; /* Adjust the size as needed */
-    font-weight: normal; /* You can also use bold if desired */
-    color: #67329e; /* Formal purple color */
-    line-height: 1.2; /* Adjust the line height for readability */
-    margin-bottom: 20px; /* Space below the subheading */
-    letter-spacing: 0.5px; /* Slight spacing between letters for readability */
-  }
-  
-  .tick-list {
-    list-style: none; /* Remove default bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-  }
-  
-  .tick-list li {
-    position: relative; /* Position relative to place the tick icon */
-    padding-left: 40px; /* Space for the tick icon */
-    margin-bottom: 10px; /* Space between items */
-    font-family: "Arial", sans-serif; /* Font style (optional) */
-    font-size: 1.2em; /* Font size (optional) */
-  }
-  
-  .tick-list li::before {
-    content: ""; /* No content needed for background image */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%); /* Vertically center the icon */
-    width: 30px; /* Width of the tick icon */
-    height: 30px; /* Height of the tick icon */
-    background: url("/public/check-mark.png") no-repeat center center; /* Path to your tick icon */
-    background-size: contain; /* Scale the icon to fit the area */
-  }
-  
-  .calendly-inline-widget {
-    flex: 1; /* Allow the widget to take up remaining space */
-    min-width: 320px;
-    height: 700px;
-    overflow: hidden;
+    width: 85%; /* Full width on small screens */
+    padding-left: 20px; /* Adjust padding */
   }
 
   .video-thumbnail {
-    position: relative;
-    width: 400px; /* Adjust width as needed */
-    height: 200px; /* Maintain 16:9 aspect ratio (300 / 16 * 9 = 169) */
-    background-color: #000; /* Background color for the thumbnail */
-    margin-bottom: 20px; /* Space between video and description */
-    margin: 35px;
-    margin-left: 35px;
-  }
-  
-  .video-thumbnail img {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Cover the container without distortion */
-  }
-  
-  .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px; /* Smaller play button */
-    height: 40px; /* Smaller play button */
-    background: url('/public/play-button.png') no-repeat center center;
-    background-size: contain; /* Adjust based on the icon */
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    margin-left: 0; /* Remove left margin */
+    padding: 0;
+    margin-right: 20px;
   }
 
-  .title_container {
-    text-align: center; /* Center the title horizontally (optional) */
-    margin: 0; /* Remove margin to avoid extra space */
-    height: fit-content;
-  
+  .tick-list li {
+    font-size: 1em; /* Adjust font size for smaller screens */
+    padding-left: 30px; /* Adjust padding */
   }
-  
+
+  .tick-list li::before {
+    margin-right: 25px;
+  }
+
   .title {
-    font-family: "Times New Roman", Times, serif; /* Formal serif font */
-    font-size: 3.5em; /* Adjust the size as needed */
-    font-weight: normal; /* You can also use bold if desired */
-    color: #333; /* Dark gray color for a formal look */
-    line-height: 1.2; /* Adjust the line height for readability */
-    margin: 0; /* Remove margin to avoid extra space */
-    padding: 10px 0; /* Optional: Add padding for spacing within the container */
-    letter-spacing: 0.5px; /* Slight spacing between letters for readability */
+    font-size: 2em; /* Adjust font size for smaller screens */
   }
 
-  @media (max-width: 899px) {
-    .description {
-      width: 85%; /* Full width on small screens */
-      padding-left: 20px; /* Adjust padding */
-    }
-  
-    .video-thumbnail {
-      width: 100%; /* Full width on small screens */
-      height: auto; /* Adjust height to maintain aspect ratio */
-      margin-left: 0; /* Remove left margin */
-      padding: 0;
-      margin-right: 20px;
-    }
-  
-    .tick-list li {
-      font-size: 1em; /* Adjust font size for smaller screens */
-      padding-left: 30px; /* Adjust padding */
-    }
-
-    .tick-list li::before{
-      margin-right: 25px;
-    }
-  
-    .title {
-      font-size: 2em; /* Adjust font size for smaller screens */
-    }
-  
-    .calendly-inline-widget {
-      width: 100%; /* Full width on small screens */
-      margin: 20px 0; /* Center horizontally and add vertical margin */
-    }
-  
-    /* Stack calendar below video on small screens */
-    .container {
-      flex-direction: column; /* Stack items vertically */
-      gap: 20px; /* Space between the stacked items */
-    }
+  #calendly-container {
+    width: 100%;
+    height: 200vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide overflow to avoid scroll bars */
   }
-  
+
+  .calendly-inline-widget {
+    width: 100%;
+    height: 100%; /* Take full height of the container */
+    border: 0;
+  }
+
+  /* Stack calendar below video on small screens */
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between the stacked items */
+  }
+}
+

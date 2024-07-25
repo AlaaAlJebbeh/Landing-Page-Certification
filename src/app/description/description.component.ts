@@ -12,6 +12,12 @@ export class DescriptionComponent {
 
   ngAfterViewInit() {
     this.loadCalendlyScript();
+    this.adjustIframeHeight();
+    window.addEventListener('resize', this.adjustIframeHeight);
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.adjustIframeHeight);
   }
 
   private loadCalendlyScript() {
@@ -20,6 +26,14 @@ export class DescriptionComponent {
     script.type = 'text/javascript';
     script.async = true;
     document.body.appendChild(script);
+  }
+
+  private adjustIframeHeight = () => {
+    const container = document.getElementById('calendly-container');
+    const newHeight = window.innerHeight + 200;
+    if (container) {
+      container.style.height = `${newHeight}px`;
+    }
   }
 
 }

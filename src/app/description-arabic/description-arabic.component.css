@@ -56,10 +56,25 @@
     direction: rtl;
   }
   
+  #calendly-container {
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Hide overflow to avoid scroll bars */
+    margin: 0;
+    padding: 0;
+  }
+  
   .calendly-inline-widget {
-    flex: 1; /* Allow the widget to take up remaining space */
-    min-width: 320px;
-    height: 700px;
+    width: 100%;
+    height: 100%; /* Take full height of the container */
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-height: max-content !important;
+  }
+  
+  .oNS9ciVl9HkYl_RNpI17.qW_zL2XDBBdtqDDZUDDc {
+    min-height: max-content !important;
   }
   
   .video-thumbnail {
@@ -134,11 +149,116 @@
   
     .title {
       font-size: 2em; /* Adjust font size for smaller screens */
+      
+    }
+  
+    #calendly-container {
+      width: 100%;
+      height: 200vh; /* Full height of the viewport */
+      overflow: hidden; /* Hide overflow to avoid scroll bars */
     }
   
     .calendly-inline-widget {
+      width: 100%;
+      height: 100%; /* Take full height of the container */
+      border: 0;
+    }
+  
+    /* Stack calendar below video on small screens */
+    .container {
+      flex-direction: column; /* Stack items vertically */
+      gap: 20px; /* Space between the stacked items */
+    }
+  }
+
+  @media (max-width: 899px) {
+    .description {
+      width: 85%; /* Full width on small screens */
+      padding-left: 20px; /* Adjust padding */
+    }
+  
+    .video-thumbnail {
       width: 100%; /* Full width on small screens */
-      margin: 20px 0; /* Center horizontally and add vertical margin */
+      height: auto; /* Adjust height to maintain aspect ratio */
+      margin-right: 0; /* Remove left margin */
+      padding: 0;
+      margin-left: 20px;
+    }
+  
+    .tick-list li {
+      font-size: 1em; /* Adjust font size for smaller screens */
+      padding-left: 30px; /* Adjust padding */
+    }
+
+    .tick-list li::before{
+      margin-left: 25px;
+    }
+  
+    .title {
+      font-size: 2em; /* Adjust font size for smaller screens */
+      
+    }
+  
+    #calendly-container {
+      width: 100%;
+      height: 200vh; /* Full height of the viewport */
+      overflow: hidden; /* Hide overflow to avoid scroll bars */
+      margin-bottom: -330px;
+      border-bottom: 20px;
+    }
+  
+    .calendly-inline-widget {
+      width: 100%;
+      height: 100%; /* Take full height of the container */
+      border: 0;
+    }
+  
+    /* Stack calendar below video on small screens */
+    .container {
+      flex-direction: column; /* Stack items vertically */
+      gap: 20px; /* Space between the stacked items */
+    }
+  }
+
+  @media (max-width: 899px) {
+    .description {
+      width: 85%; /* Full width on small screens */
+      padding-left: 20px; /* Adjust padding */
+    }
+  
+    .video-thumbnail {
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Adjust height to maintain aspect ratio */
+      margin-right: 0; /* Remove left margin */
+      padding: 0;
+      margin-left: 20px;
+    }
+  
+    .tick-list li {
+      font-size: 1em; /* Adjust font size for smaller screens */
+      padding-left: 30px; /* Adjust padding */
+    }
+
+    .tick-list li::before{
+      margin-left: 25px;
+    }
+  
+    .title {
+      font-size: 2em; /* Adjust font size for smaller screens */
+      
+    }
+  
+    #calendly-container {
+      width: 100%;
+      height: 200vh; /* Full height of the viewport */
+      overflow: hidden; /* Hide overflow to avoid scroll bars */
+
+    }
+  
+    .calendly-inline-widget {
+      width: 100%;
+      height: 100%; /* Take full height of the container */
+      border: 0;
     }
   
     /* Stack calendar below video on small screens */
